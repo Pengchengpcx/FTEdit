@@ -11,7 +11,7 @@ FTEdit: Tuning-free image editing based on Flow Transformer
   </a>
 </div>
 
-**Pengcheng Xu | Boyuan Jiang | Xiaobin Hu| Donghao Luo | Qingdong He | Jiangning Zhang | Chengjie Wang | Yunsheng Wu | Charles Ling | Boyu Wang**
+**Pengcheng Xu | Boyuan Jiang | Xiaobin Hu | Donghao Luo | Qingdong He | Jiangning Zhang | Chengjie Wang | Yunsheng Wu | Charles Ling | Boyu Wang**
 
 > Western University
 > 
