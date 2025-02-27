@@ -1,6 +1,6 @@
 # Unveil Inversion and Invariance in Flow Transformer for Versatile Image Editing
 
-FTEdit: Tuning-free image editing based on Flow Transformer
+Official Implementation of CVPR 2025 for FTEdit: Tuning-free image editing based on Flow Transformer
 
 <div style="display: flex; justify-content: center; align-items: center;">
   <a href="https://arxiv.org/pdf/2411.15843" style="margin: 0 2px;">
@@ -16,4 +16,5 @@ FTEdit: Tuning-free image editing based on Flow Transformer
 > Western University
 > 
 > Tencent
+
 
