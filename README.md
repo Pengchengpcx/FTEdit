@@ -18,7 +18,7 @@ Official Implementation of **CVPR 2025** for FTEdit: Tuning-free image editing b
 > Tencent
 
 ## Ongoing:
-1. Update the edited paper to be camera-ready.
+1. Update the edited paper to be camera-ready. (Done)
 
 2. Unified codebase cleaning.
 
