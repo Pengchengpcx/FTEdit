@@ -20,6 +20,8 @@ Official Implementation of **CVPR 2025** for FTEdit: Tuning-free image editing b
 ## Ongoing:
 1. Update the edited paper to be camera-ready. (Done)
 
-2. Extended properties and results. (An extended version is uploaded to Arxiv. **Explore Inversion and Invariance in Flow Transformer for General Conditional Generation**)
+2. Extended properties and results (An extended version is uploaded to Arxiv).
+
+   **Explore Inversion and Invariance in Flow Transformer for General Conditional Generation**)
    
-3. Unified codebase cleaning.
+5. Unified codebase cleaning.
