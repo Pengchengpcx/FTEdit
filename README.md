@@ -36,7 +36,7 @@ python edit_gensd35.py --inv_cfg 4.0 --recov_cfg 4.0 --skip_steps 0\
                        --tar_prompt 'a golden shorthair cat sit on the wooden table'\
                        --saved_path ./\
                        --seed 2024\
-                       --model_path '/home/tione/notebook/byronjiang/ckpt/stable-diffusion-3.5-large'
+                       --model_path 'model path'
 ```
 
 
@@ -100,7 +100,7 @@ python edit_real_sd35_singleimg.py --inv_cfg 1 --recov_cfg 2\
                          --src_prompt 'a cup of coffee with drawing of tulip putted on the wooden table.'\
                          --tar_prompt 'a cup of coffee with drawing of lion putted on the wooden table.'\
                          --saved_path './'\
-                         --model_path '/home/tione/notebook/byronjiang/ckpt/stable-diffusion-3.5-large'
+                         --model_path 'model_path'
 
 
 python edit_real_sd35_singleimg.py --inv_cfg 1 --recov_cfg 2\
@@ -109,7 +109,7 @@ python edit_real_sd35_singleimg.py --inv_cfg 1 --recov_cfg 2\
                          --src_prompt 'A person with arms down.'\
                          --tar_prompt 'A person with arms crossed.'\
                          --saved_path './'\
-                         --model_path '/home/tione/notebook/byronjiang/ckpt/stable-diffusion-3.5-large'
+                         --model_path 'model_path'
 
 
 python edit_real_sd35_singleimg.py --inv_cfg 1 --recov_cfg 2\
@@ -118,7 +118,7 @@ python edit_real_sd35_singleimg.py --inv_cfg 1 --recov_cfg 2\
                          --src_prompt "a logo of a 'bird' shape in a black background."\
                          --tar_prompt "a logo of a 'X' shape in a black background."\
                          --saved_path './'\
-                         --model_path '/home/tione/notebook/byronjiang/ckpt/stable-diffusion-3.5-large'
+                         --model_path 'model_path'
 ```
 
 
