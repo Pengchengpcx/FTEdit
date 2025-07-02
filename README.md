@@ -57,9 +57,9 @@ AdaLN can also be used to generate images with consistent ID by maintaing the in
 
 ``` python
 [
-  ['an origami seesaw on the table', 'an origami seesaw on the table, playing the football'],
-  ['an origami seesaw on the table', 'an origami seesaw on the table, surfing on the sea'],
-  ['an origami seesaw on the table', 'an origami seesaw on the table, sitting in the meadow'],
+  ['an origami seesaw on the table', 'an origami seesaw, playing football'],
+  ['an origami seesaw on the table', 'an origami seesaw, surfing on the sea'],
+  ['an origami seesaw on the table', 'an origami seesaw, sitting in the meadow'],
 ]
 ```
 
@@ -120,6 +120,10 @@ python edit_real_sd35_singleimg.py --inv_cfg 1 --recov_cfg 2\
                          --saved_path './'\
                          --model_path 'model_path'
 ```
+
+
+# TODO
+Release the extended version on convergence analysis and curated data.
 
 
 
