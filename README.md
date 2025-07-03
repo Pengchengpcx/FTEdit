@@ -25,6 +25,8 @@ conda env create -f environment.yml
 conda activate ftedit
 ```
 
+The model is based on Stable Diffusion 3.5, which you can download [here](https://huggingface.co/stabilityai/stable-diffusion-3.5-large). After downloading the model, you can set the model path.
+
 # Image Editing
 
 ## Edit generated images
@@ -32,8 +34,8 @@ You can manipulate the images along with the generation process with AdaLN injec
 
 ``` python
 python edit_gensd35.py --inv_cfg 4.0 --recov_cfg 4.0 --skip_steps 0\
-                       --src_prompt 'a silver shorthair cat sit on the wooden table'\
-                       --tar_prompt 'a golden shorthair cat sit on the wooden table'\
+                       --src_prompt 'a silver shorthair cat sits on the wooden table'\
+                       --tar_prompt 'a golden shorthair cat sits on the wooden table'\
                        --saved_path ./\
                        --seed 2024\
                        --model_path 'model path'
@@ -45,7 +47,7 @@ You can try different prompts to control different editing types. Here we provid
 ``` python
 [
   ['three apples on a silver plate', 'two apples on a silver plate'],
-  ['a beauty with the smilling face', 'a beauty with a sad face'],
+  ['a beauty with the smiling face', 'a beauty with a sad face'],
   ['A monkey holding a sign reading ”Scaling diffusion model is awesome!', 'A monkey holding a sign reading ”Scaling transformers model is awesome!'],
   ['a cheetah standing on the wooden table', 'a cheetah sitting on the wooden table'],
 ]
@@ -53,7 +55,7 @@ You can try different prompts to control different editing types. Here we provid
 
 
 ## Consistent generation
-AdaLN can also be used to generate images with consistent ID by maintaing the invaraint text prompt. Application on real images with ID masks can also be combined and explored.
+AdaLN can also be used to generate images with a consistent ID by maintaining the invariant text prompt. Application on real images with ID masks can also be combined and explored.
 
 ``` python
 [
@@ -67,7 +69,7 @@ AdaLN can also be used to generate images with consistent ID by maintaing the in
 
 
 ## Edit real images
-We provide script to edit image for evaluation. We build the evaluation protocal based on the [PIE benchmark](https://github.com/cure-lab/PnPInversion). Apart from the proposed AdaLN invariance control mechanism, we also add the Attention injection mechanism. You can change the hyperparameters `--ly_ratio` for AdaLN and `--attn_ratio` for Attention to control the ratio of timesteps to copy features. We also integrate the skip-step option `--skip_steps` that skip the first steps during editing and inversion to control the inversion steps. This can also help to maintain the invaraince.
+We provide a script to edit the image for evaluation. We built the evaluation protocol based on the [PIE benchmark](https://github.com/cure-lab/PnPInversion). Apart from the proposed AdaLN invariance control mechanism, we also add the Attention injection mechanism. You can change the hyperparameters `--ly_ratio` for AdaLN and `--attn_ratio` for Attention to control the ratio of timesteps to copy features. We also integrate the skip-step option `--skip_steps` that skip the first steps during editing and inversion to control the inversion steps. This can also help to maintain the invariance.
 
 
 ``` python
@@ -88,7 +90,7 @@ python evaluate.py --metrics "structure_distance" "psnr_unedit_part" "lpips_uned
 ```
 
 
-The intuition of choosing these parameters is that you can generally set `--ly_ratio` as 1.0 if the inversion of the real image is accuarate and approximates the real generation process. In this case, the text-to-image alingment is not mismatched, and the AdaLN injection can flexibly control of image contents by manipulating text prompt. You can also add a small ratio of Attention injection `--attn_ratio` as 0.1 or 0.2. However, too much attention injection may hinder the editing effect since it inject both desired edited and non-target edited features.
+**Intuition**: The intuition of choosing these hyperparameters is that you can generally set `--ly_ratio` as 1.0 if the inversion of the real image is accurate and approximates the real generation process. In this case, the text-to-image alignment is not mismatched, and the AdaLN injection can flexibly control image contents by manipulating the text prompt. You can also add a small ratio of Attention injection `--attn_ratio` as 0.1 or 0.2. However, too much attention injection may hinder the editing effect since it injects both desired edited and non-target edited features.
 
 You can also edit a single image with the following script:
 
@@ -97,8 +99,8 @@ You can also edit a single image with the following script:
 python edit_real_sd35_singleimg.py --inv_cfg 1 --recov_cfg 2\
                          --skip_steps 0 --ly_ratio 1.0 --attn_ratio 0.15\
                          --src_path 'examples/1.jpg'\
-                         --src_prompt 'a cup of coffee with drawing of tulip putted on the wooden table.'\
-                         --tar_prompt 'a cup of coffee with drawing of lion putted on the wooden table.'\
+                         --src_prompt 'a cup of coffee with a drawing of a tulip put on the wooden table.'\
+                         --tar_prompt 'a cup of coffee with a drawing of a lion put on the wooden table.'\
                          --saved_path './'\
                          --model_path 'model_path'
 
@@ -129,7 +131,7 @@ Release the extended version on convergence analysis and curated data.
 
 
 # Citation
-If you think our work helpful, please cite our paper. Thanks for your interest and support!
+If you think our work is helpful, please cite our paper. Thanks for your interest and support!
 
 
 
