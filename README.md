@@ -69,7 +69,7 @@ AdaLN can also be used to generate images with a consistent ID by maintaining th
 
 
 ## Edit real images
-We provide a script to edit the image for evaluation. We built the evaluation protocol based on the [PIE benchmark](https://github.com/cure-lab/PnPInversion). Apart from the proposed AdaLN invariance control mechanism, we also add the Attention injection mechanism. You can change the hyperparameters `--ly_ratio` for AdaLN and `--attn_ratio` for Attention to control the ratio of timesteps to copy features. We also integrate the skip-step option `--skip_steps` that skip the first steps during editing and inversion to control the inversion steps. This can also help to maintain the invariance.
+We provide a script to edit the image for evaluation. We built the evaluation protocol based on the [PIE benchmark](https://github.com/cure-lab/PnPInversion). Apart from the proposed AdaLN invariance control mechanism, we also add the Attention injection mechanism. You can change the hyperparameters `--ly_ratio` for AdaLN and `--attn_ratio` for Attention to control the ratio of timesteps to copy features. We also integrate the skip-step option `--skip_steps` that skips the first steps during editing and inversion to control the inversion steps. This can also help to maintain the invariance. However, it may also degrade the editing ability since the early generation process is fixed, and we set it to zero in our experiments.
 
 
 ``` python
@@ -90,7 +90,7 @@ python evaluate.py --metrics "structure_distance" "psnr_unedit_part" "lpips_uned
 ```
 
 
-**Intuition**: The intuition of choosing these hyperparameters is that you can generally set `--ly_ratio` as 1.0 if the inversion of the real image is accurate and approximates the real generation process. In this case, the text-to-image alignment is not mismatched, and the AdaLN injection can flexibly control image contents by manipulating the text prompt. You can also add a small ratio of Attention injection `--attn_ratio` as 0.1 or 0.2. However, too much attention injection may hinder the editing effect since it injects both desired edited and non-target edited features.
+**Intuition of hyperparameters**: The intuition of choosing these hyperparameters is that you can generally set `--ly_ratio` as 1.0 if the inversion of the real image is accurate and approximates the real generation process. In this case, the text-to-image alignment is not mismatched, and the AdaLN injection can flexibly control image contents by manipulating the text prompt. You can also add a small ratio of Attention injection `--attn_ratio` as 0.1 or 0.2. However, too much attention injection may hinder the editing effect since it injects both desired edited and non-target edited features.
 
 You can also edit a single image with the following script:
 
@@ -125,7 +125,7 @@ python edit_real_sd35_singleimg.py --inv_cfg 1 --recov_cfg 2\
 
 
 # TODO
-Release the extended version on convergence analysis and curated data.
+Release the extended version on convergence analysis and curated data for non-rigid editing.
 
 
 
