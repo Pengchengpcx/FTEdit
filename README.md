@@ -21,6 +21,11 @@ Official Implementation of **CVPR 2025** for FTEdit: Tuning-free image editing b
 > Tencent
 
 
+# Extended version on convergence analysis and non-rigid editing.
+We provide the additional analysis of the convergence of the proposed inversion, as well as additional results on non-rigid editing, in the extended version. We curated a new dataset with appropriate masks for non-rigid editing to evaluate the preservation ability of methods. Please check out the paper "**Explore Inversion and Invariance in Flow Transformer for General Conditional Generation**" on [TechRxiv](https://www.techrxiv.org/doi/full/10.36227/techrxiv.175561689.99219931/v1).
+
+
+
 # Setup
 Install the conda environment:
 ```bash
@@ -125,10 +130,6 @@ python edit_real_sd35_singleimg.py --inv_cfg 1 --recov_cfg 2\
                          --saved_path './'\
                          --model_path 'model_path'
 ```
-
-
-# Extended version on convergence analysis and non-rigid editing.
-We provide an analysis of the convergence of the proposed inversion, as well as additional results on non-rigid editing, in the extended version. We curated a new dataset with appropriate masks for non-rigid editing to evaluate the preservation ability of methods. Please check out the paper "**Explore Inversion and Invariance in Flow Transformer for General Conditional Generation**" on [TechRxiv](https://www.techrxiv.org/doi/full/10.36227/techrxiv.175561689.99219931/v1).
 
 
 
